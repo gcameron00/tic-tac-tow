@@ -1,17 +1,108 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>Home</title>
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta name="description" content="An elegant Tic-Tac-Toe (noughts and crosses) game for one or two players. Shall we play a game?" />
+    <title>Tic-Tac-Toe — Shall we play a game?</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <script defer src="/assets/js/main.js"></script>
   </head>
   <body>
-    <h1>It works 🎉</h1>
-    <p>This site is deployed using Cloudflare Pages.</p>
-    <p><a href="/about/">About</a></p>
+    <div class="app">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="28" height="28">
+              <line x1="12" y1="3" x2="12" y2="29" />
+              <line x1="20" y1="3" x2="20" y2="29" />
+              <line x1="3" y1="12" x2="29" y2="12" />
+              <line x1="3" y1="20" x2="29" y2="20" />
+            </svg>
+          </span>
+          <span class="brand-name">Tic&#8209;Tac&#8209;Toe</span>
+        </a>
+        <nav class="site-nav">
+          <a href="/" aria-current="page">Play</a>
+          <a href="/about/">About</a>
+        </nav>
+      </header>
+
+      <main class="game">
+        <!-- Setup / options -->
+        <section class="panel setup" id="setup" aria-label="Game options">
+          <h1 class="tagline">Shall we play a game?</h1>
+
+          <fieldset class="option-group">
+            <legend>Players</legend>
+            <div class="segmented" role="radiogroup" aria-label="Number of players">
+              <button type="button" class="seg is-active" data-mode="1" role="radio" aria-checked="true">
+                One player
+              </button>
+              <button type="button" class="seg" data-mode="2" role="radio" aria-checked="false">
+                Two players
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="option-group" id="difficulty-group">
+            <legend>Opponent</legend>
+            <div class="segmented" role="radiogroup" aria-label="Computer difficulty">
+              <button type="button" class="seg" data-difficulty="easy" role="radio" aria-checked="false">
+                Playful
+              </button>
+              <button type="button" class="seg" data-difficulty="medium" role="radio" aria-checked="false">
+                Wary
+              </button>
+              <button type="button" class="seg is-active" data-difficulty="hard" role="radio" aria-checked="true">
+                W.O.P.R.
+              </button>
+            </div>
+            <p class="hint" id="difficulty-hint">The only winning move is not to play. Good luck.</p>
+          </fieldset>
+        </section>
+
+        <!-- Scoreboard -->
+        <section class="scoreboard" aria-label="Scoreboard">
+          <div class="score score-x" id="score-x-card">
+            <span class="score-label" id="label-x">Player X</span>
+            <span class="score-value" id="score-x">0</span>
+          </div>
+          <div class="score score-draw">
+            <span class="score-label">Draws</span>
+            <span class="score-value" id="score-draw">0</span>
+          </div>
+          <div class="score score-o" id="score-o-card">
+            <span class="score-label" id="label-o">Player O</span>
+            <span class="score-value" id="score-o">0</span>
+          </div>
+        </section>
+
+        <!-- Status line -->
+        <p class="status" id="status" role="status" aria-live="polite">Your move, X.</p>
+
+        <!-- Board -->
+        <section class="board-wrap">
+          <div class="board" id="board" role="grid" aria-label="Tic-Tac-Toe board">
+            <!-- Cells are injected by main.js. This static grid is a no-JS fallback. -->
+          </div>
+          <svg class="win-line" id="win-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <line id="win-line-seg" x1="0" y1="0" x2="0" y2="0" />
+          </svg>
+        </section>
+
+        <!-- Controls -->
+        <div class="controls">
+          <button type="button" class="btn btn-primary" id="new-round">New round</button>
+          <button type="button" class="btn" id="reset-scores">Reset scores</button>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <p>A strange game. <a href="/about/">Learn more</a> · Static HTML/CSS/JS on Cloudflare Pages.</p>
+      </footer>
+    </div>
   </body>
 </html>

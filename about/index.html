@@ -1,15 +1,99 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>About</title>
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta name="description" content="About this elegant Tic-Tac-Toe game — how to play, the modes, and a nod to WarGames." />
+    <title>About — Tic-Tac-Toe</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
   </head>
   <body>
-    <h1>About</h1>
-    <p><a href="/">Back home</a></p>
+    <div class="app">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="28" height="28">
+              <line x1="12" y1="3" x2="12" y2="29" />
+              <line x1="20" y1="3" x2="20" y2="29" />
+              <line x1="3" y1="12" x2="29" y2="12" />
+              <line x1="3" y1="20" x2="29" y2="20" />
+            </svg>
+          </span>
+          <span class="brand-name">Tic&#8209;Tac&#8209;Toe</span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Play</a>
+          <a href="/about/" aria-current="page">About</a>
+        </nav>
+      </header>
+
+      <main>
+        <article class="prose">
+          <h1>About</h1>
+          <p>
+            An elegant, framework-free game of <strong>Tic-Tac-Toe</strong> — known in
+            some corners of the world as <strong>noughts and crosses</strong>. Play
+            against a friend on the same device, or take on the computer.
+          </p>
+
+          <blockquote>
+            "Shall we play a game?" — WOPR, <em>WarGames</em> (1983)
+          </blockquote>
+
+          <h2>How to play</h2>
+          <p>
+            Two players take turns marking squares on a 3&times;3 grid — one plays
+            <strong>X</strong> (crosses), the other <strong>O</strong> (noughts).
+            The first to line up three of their marks in a row — horizontally,
+            vertically, or diagonally — wins. If every square is filled with no
+            winner, the game is a draw.
+          </p>
+
+          <h2>Game modes</h2>
+          <ul>
+            <li><strong>One player</strong> — you play X and move first against the computer.</li>
+            <li><strong>Two players</strong> — hand the device back and forth for local play.</li>
+          </ul>
+
+          <h2>The opponent</h2>
+          <p>Choose how hard the machine plays:</p>
+          <ul>
+            <li><strong>Playful</strong> — moves at random; a gentle warm-up.</li>
+            <li><strong>Wary</strong> — takes wins, blocks threats, but can be outfoxed.</li>
+            <li><strong>W.O.P.R.</strong> — perfect play by way of the minimax algorithm.
+              As the film taught us: <em>the only winning move is not to play.</em>
+              Against W.O.P.R. the very best you can hope for is a draw.</li>
+          </ul>
+          <p>
+            In one-player mode the computer takes a brief moment of "thinking time"
+            before moving — because even a supercomputer likes to look thoughtful.
+          </p>
+
+          <h2>A nod to WarGames</h2>
+          <p>
+            This game tips its hat to the 1983 film <em>WarGames</em>, in which a
+            military supercomputer called WOPR learns the futility of tic-tac-toe.
+            Play a few rounds and the machine may get chatty — greetings, Professor
+            Falken.
+          </p>
+
+          <h2>Under the hood</h2>
+          <p>
+            Pure static HTML, CSS, and JavaScript — no frameworks, no build step —
+            hosted on <strong>Cloudflare Pages</strong>. Fully responsive, with light
+            and dark themes that follow your system preference, and reduced-motion
+            support.
+          </p>
+
+          <p><a href="/">&larr; Back to the game</a></p>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <p>A strange game. The only winning move is not to play.</p>
+      </footer>
+    </div>
   </body>
 </html>
